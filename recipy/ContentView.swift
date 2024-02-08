@@ -17,14 +17,12 @@ struct ContentView: View {
             "tapi"
         ]
     
-    
     var body: some View {
         ScrollView (showsIndicators: false) {
             Text("Featured on Uber Eats")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding()
-            
             
                 ForEach(foodImages, id: \.self) { foodImage in
                     VStack(alignment: .leading){
