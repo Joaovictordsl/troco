@@ -8,8 +8,38 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    
+    let foodImages: [(key: String, value: String)] = [
+            ("hamburger2", "Hamburger"),
+            ("italian", "Italian"),
+            ("tapi", "Tapioca"),
+            ("chicken", "Galinha"),
+            ("pasta", "Macarrao")
+        ]
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView (showsIndicators: false) {
+            VStack {
+                ForEach(foodImages, id: \.key) { foodImage in
+                    Button {
+                        print(foodImage.value)
+                    } label: {
+                        Image(foodImage.key)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 360, height: 150)
+                            .cornerRadius(10)
+                    }
+                    
+                }
+            }
+            
+            
+            
+        }
+        
     }
 }
 

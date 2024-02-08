@@ -16,13 +16,13 @@ struct ContentView: View {
             "hamburger2",
             "tapi"
         ]
-    
     var body: some View {
         ScrollView (showsIndicators: false) {
             Text("Featured on Uber Eats")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .padding()
+            
             
                 ForEach(foodImages, id: \.self) { foodImage in
                     VStack(alignment: .leading){
@@ -33,7 +33,7 @@ struct ContentView: View {
                             .frame(width: 360, height: 150)
                             .cornerRadius(10)
                         
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading, spacing: 4){
                             Text("Food")
                                 .fontWeight(.semibold)
                             Text("%0.99 Delivery Fee | 15 - 30 min")
@@ -44,6 +44,8 @@ struct ContentView: View {
                     }
 
                 }
+            
+                
         }
         
         
