@@ -9,50 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let foodImages = [
-            "chicken",
-            "italian",
-            "pasta",
-            "hamburger2",
-            "tapi"
+    var foodImages = [
+        "chicken",
+        "hamburger2",
+        "italian",
+        "pasta",
+        "tapi"
         ]
+    
+    
     var body: some View {
-        ScrollView (showsIndicators: false) {
-            Text("Featured on Uber Eats")
-                .font(.title2)
-                .fontWeight(.semibold)
-                .padding()
-            
-            
+        
+        Text("Uber Eats")
+            .font(.title2)
+        
+        
+        ScrollView(showsIndicators: false) {
+            VStack {
                 ForEach(foodImages, id: \.self) { foodImage in
-                    VStack(alignment: .leading){
-                        
-                        Image(foodImage)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 360, height: 150)
-                            .cornerRadius(10)
-                        
-                        VStack(alignment: .leading, spacing: 4){
-                            Text("Food")
-                                .fontWeight(.semibold)
-                            Text("%0.99 Delivery Fee | 15 - 30 min")
-                                .foregroundColor(.gray)
-                        }
+                    
+                    Image(foodImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 360, height: 180)
+                        .cornerRadius(10.0)
+                    Text("Food | $12.99")
                         .font(.subheadline)
-
-                    }
+                        
 
                 }
+            }
             
-                
         }
-        
-        
     }
 }
 
 #Preview {
-    
     ContentView()
 }
