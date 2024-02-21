@@ -40,7 +40,6 @@ struct RecipyView: View {
                                         .font(.subheadline)
                                         .foregroundColor(.gray)
                                         .frame(width: 360, height: 20, alignment: .leading)
-                                    
                                 }
                             }
                         }
