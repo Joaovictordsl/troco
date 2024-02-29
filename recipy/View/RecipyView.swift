@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipyView: View {
     
     @State var showModal = false
+    @State var selectedImageKey: String? = nil
     
     let recipyData = RecipyData()
     
@@ -20,55 +21,61 @@ struct RecipyView: View {
             .font(.title2)
         
         
+        
+        ScrollView (showsIndicators: false) {
             
-            ScrollView (showsIndicators: false) {
+            ForEach(recipyData.foodImages, id: \.key) { foodImage in
                 
-                ForEach(recipyData.foodImages, id: \.key) { foodImage in
+                Button {
+                    selectedImageKey = foodImage.key
+                    showModal = true
                     
-                    Button {
-                        showModal = true
-                        
-                    } label: {
-//                        NavigationLink(destination: ContentView()) {
-                            VStack {
-                                Image(foodImage.key)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 360, height: 160)
-                                    .cornerRadius(10)
-                                VStack (alignment: .leading, spacing: 2) {
-                                    Text(foodImage.value)
-                                        .font(.subheadline)
-                                        .frame(width: 360, height: 20, alignment: .leading)
-                                    Text(foodImage.com)
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
-                                        .frame(width: 360, height: 20, alignment: .leading)
-                                }
-                            }
-                        
+                } label: {
+                    VStack {
+                        Image(foodImage.key)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 360, height: 160)
+                            .cornerRadius(10)
+                        VStack (alignment: .leading, spacing: 2) {
+                            Text(foodImage.value)
+                                .font(.subheadline)
+                                .frame(width: 360, height: 20, alignment: .leading)
+                            Text(foodImage.com)
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .frame(width: 360, height: 20, alignment: .leading)
+                        }
                     }
+                    
                 }
             }
-            .sheet(isPresented: $showModal) {
-                ModalView()
-            }
+        }
+        .sheet(isPresented: $showModal) {
+            ModalView(selectedImageKey: selectedImageKey)
+        }
         
         
-
+        
         
     }
 }
 
 struct ModalView: View {
     
-    let recipyData = RecipyData()
-    @State private var selectedFoodImage: String? = nil
-
+    let selectedImageKey: String?
     var body: some View {
-        VStack {
-//
-    }
+        
+            
+                if let key = selectedImageKey {
+                    Image(key)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else {
+                    Text("No image selected")
+                }
+            }
+    
 }
 
 #Preview {
