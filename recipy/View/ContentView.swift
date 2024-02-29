@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let recipyData = RecipyData()
     
     var body: some View {
         

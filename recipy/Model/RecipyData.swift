@@ -14,4 +14,14 @@ struct RecipyData {
      ("italian","Italian","$15.99 | Ravioli"),
      ("tapi","Tapioca","$5.99 | Brazilian Tapioca"),
      ("chicken","Chicken","$4.99 | Chicken Wings")]
+    
+    
+    func showImage(foodImage: String) -> String? {
+            for (key, value, _) in foodImages {
+                if value == foodImage {
+                    return key
+                }
+            }
+            return nil
+        }
 }

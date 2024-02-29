@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1AAAFE2B8C204000EF5ABA /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AAAFD2B8C204000EF5ABA /* SwiftUIView.swift */; };
 		EB2378B82B70997C00C25DC5 /* recipyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2378B72B70997C00C25DC5 /* recipyApp.swift */; };
 		EB2378BA2B70997C00C25DC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2378B92B70997C00C25DC5 /* ContentView.swift */; };
 		EB2378BC2B70997E00C25DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2378BB2B70997E00C25DC5 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB1AAAFD2B8C204000EF5ABA /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		EB2378B42B70997C00C25DC5 /* recipy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = recipy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2378B72B70997C00C25DC5 /* recipyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recipyApp.swift; sourceTree = "<group>"; };
 		EB2378B92B70997C00C25DC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 		EB2378AB2B70997C00C25DC5 = {
 			isa = PBXGroup;
 			children = (
+				EB1AAAFD2B8C204000EF5ABA /* SwiftUIView.swift */,
 				EB2378B62B70997C00C25DC5 /* recipy */,
 				EB2378B52B70997C00C25DC5 /* Products */,
 			);
@@ -164,6 +167,7 @@
 			files = (
 				EB2378BA2B70997C00C25DC5 /* ContentView.swift in Sources */,
 				EBC9A87C2B75C57B006A60AC /* RecipyManager.swift in Sources */,
+				EB1AAAFE2B8C204000EF5ABA /* SwiftUIView.swift in Sources */,
 				EB2378B82B70997C00C25DC5 /* recipyApp.swift in Sources */,
 				EBC9A8772B75C229006A60AC /* RecipyData.swift in Sources */,
 				EBC9A8752B75BA15006A60AC /* RecipyView.swift in Sources */,
