@@ -14,13 +14,10 @@ struct RecipyView: View {
     
     let recipyData = RecipyData()
     
-    
     var body: some View {
         
         Text("Uber Eats")
             .font(.title2)
-        
-        
         
         ScrollView (showsIndicators: false) {
             
@@ -55,9 +52,6 @@ struct RecipyView: View {
             ModalView(selectedImageKey: selectedImageKey)
         }
         
-        
-        
-        
     }
 }
 
@@ -70,7 +64,9 @@ struct ModalView: View {
                 if let key = selectedImageKey {
                     Image(key)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .ignoresSafeArea()
+                        .scaledToFill()
+                        .frame(width: 400, height: 760)
                 } else {
                     Text("No image selected")
                 }
